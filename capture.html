@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker and Analyser</title>
+    <link rel="stylesheet" type="text/css" href="capture.css">
+</head>
+<body>
+    <div id="div1">
+        <h1 style="margin-top: 5px;">Image Capture</h1>
+        <div class="div2" style="margin-top: 5px;">
+            <video id="video" autoplay></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <img id="capturedImage">
+
+            <div style="display: flex; flex-direction: row;margin-top: 5px;">
+                <button id="captureBtn"><b>Capture</b></button>
+                <button id="switchCamera"><b>Switch Camera</b></button>
+                <button id="upload"><b>Upload</b></button>
+                <button id="recapture"><b>Recapture</b></button>
+                <button id="retry"><b>Retry</b></button>
+            </div>
+            
+            <p id="uploadStatus"></p>
+            <button id="captureanother"><b>Capture another</b></button>
+            
+        </div>
+
+        <a class="a" href="index.html" >
+            <button >
+            <b>Back</b>
+            </button>
+    </div>
+    <div id="s1">
+        <img src="gif.gif" />
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1117.0/aws-sdk.min.js"></script>
+    <script type="module" src="capture.js"></script>
+</body>
+</html>

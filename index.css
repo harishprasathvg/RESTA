@@ -1,0 +1,57 @@
+body, h1, p, div {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background-image: url("https://hips.hearstapps.com/hmg-prod/images/close-up-of-grocery-receipt-royalty-free-image-147205787-1541672141.jpg?resize=2048:*");
+        background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+    
+    h1 {
+        margin-bottom: 50px;
+        font-size:xx-large;
+    }
+    
+    
+    button {
+        padding: 10px 20px;
+    background-color: bisque;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 160px;
+    height: 50px;
+    font-size: 15px;
+    }
+    
+    #Container {
+        margin-top: 20px;
+    }
+    
+    button:hover {
+        background-color: #3367d6;
+        color: white;
+    }
+    .div1{
+        height: 70%; 
+        width: 50%;
+        border-radius: 10px; 
+        background-color: rgba(255,255,255,0.7);
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        align-content: center; 
+        flex-direction: column; 
+        position: absolute;
+    }
+    

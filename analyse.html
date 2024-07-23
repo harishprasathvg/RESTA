@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <title>Expense Tracker and Analyser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="analyse_w3.css">
+    <link rel="stylesheet" type="text/css" href="analyse.css">
+    <body>
+        
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-left"  id="mySidebar" style="width: 15%; height: 720px; background-color: #D2B48C;">
+            <button class="w3-bar-item w3-button w3-large" style="color: #000;"
+            onclick="w3_close()">&#129152;</button>
+            
+            <a href="index.html" class="w3-bar-item w3-button">Home</a>
+            <button class="w3-bar-item w3-button" onclick="change('mypage',' My Page')">My Page</button>
+            <button class="w3-bar-item w3-button" id="viewitemsbutton" onclick="change('viewitems',' View Items')">View Items</button>
+            <button class="w3-bar-item w3-button" id="total-expense-button" onclick="change('total-expense',' Total Expense')">Total Expense</button>
+            <button class="w3-bar-item w3-button" id="category-expense-button" onclick="change('category-expense',' Category Expense')">Category Expense</button>
+        </div>
+
+        <div id="all" style="margin-left: 15%; ">
+
+            <div class="w3-teal" style="display: flex; flex-direction: row;">
+                <button id="openNav" class="w3-button w3-teal w3-xlarge" style="display: none;" onclick="w3_open()">&#9776;</button>
+                <h1 style="margin-left: 2%;" id="header_name"> My Page</h1>     
+            </div>
+            <div id="div1">
+                <div id="mypage" class="w3-container">
+                
+                </div>
+                
+                <div id="viewitems" style="display: none;" class="w3-container">
+                    <div id="div_range">
+                        <label class="label" for="categorySelect">Select a Category:</label>
+                        <select id="categorySelect" name="categorySelect">
+                            <option value="all">All</option>
+                        </select>
+                    </div>
+                    <div id="between_date">
+                        <label class="label" for="startDate">From Date:</label>
+                        <input type="date" id="startDate" name="startDate" value="1980-01-01"><br>
+                        <label class="label" for="endDate" style="margin-right: 22px;">To Date:</label>
+                        <input type="date" id="endDate" name="endDate" value="2025-01-01">
+                    </div>
+                    <div class="search-container">
+                        <input id="search"  type="search" class="search-input"  placeholder="Search...">
+                        <button id="searchbutton" type="submit" onclick="search()">Search</button>
+                        <div id="suggestion-box"></div>
+                    </div>
+                    <div id="table-container"></div>
+                </div>
+                <div id="total-expense" style="display: none;" class="w3-container">
+                    
+                        <h3 id="total"></h3>
+                        <div class="tediv" >
+                            <label class="label1">Last 10 Years</label>
+                            <canvas id="year_chart" ></canvas>
+                        </div>
+                        <div class="tediv" id="tediv2">
+                            <div class="flex-container">
+                                <label class="label1" for="customYear">Select a year</label>
+                                <input type="number" id="customYear" name="customYear" value="2024" min="1900" max="2099" step="1">
+                            </div>
+                        </div>
+                        <div class="tediv" id="tediv3">
+                            <label for="monthInput">Select a month:</label>
+                            <input type="month" id="monthInput" name="monthInput" value="2024-04" />
+                        </div>
+                        <div class="tediv" id="tediv4">
+                            <div id="between_date">
+                                <label for="startDate_te">From Date:</label>
+                                <input type="date" id="startDate_te" name="startDate">
+                                <label for="endDate_te" style="margin-right: 22px;">  To Date:    </label>
+                                <input type="date" id="endDate_te" name="endDate">
+                            </div>
+                        </div>
+                        
+                        <!--
+                        <div class="tediv" id="tediv3">
+                            <label for="startDate">From Date:</label>
+                            <input type="date" id="startDate" name="startDate" value="2023-01-01"><br>
+                            <label for="endDate" style="margin-right: 22px;">To Date:    </label>
+                            <input type="date" id="endDate" name="endDate" value="2024-01-01">
+                        </div>
+                        <div class="tediv">
+                            <label class="label1" for="a1_dateBetween" style="margin-right: 22px;">Range :</label>
+                            <select id="a1_dateBetween" name="a1_dateBetween">
+                                <option value="all">All</option>
+                                <option value="date">Last 10 days</option>
+                                <option value="month">Last Month</option>
+                                <option value="year">Last Year</option>
+                            <div id="a1_line"></div>
+                        </div>
+                        -->
+                </div>       
+                <div id="category-expense" style="display: none;" class="w3-container">
+                    <div class="cediv" >
+                        <label class="label1"  style="margin-top: 20px;">Last 10 Years</label>
+                        <canvas id="year_pie_chart" ></canvas>
+                    </div>
+                    <div class="cediv" id="cediv2">
+                        <div class="flex-container">
+                            <label class="label1" for="customYear_pie">Select a year</label>
+                            <input style="margin-top: 10px;" type="number" id="customYear_pie" name="customYear_pie" value="2024" min="1900" max="2099" step="1">
+                        </div>
+                    </div>
+                    <div class="cediv" id="cediv3">
+                        <label for="monthInput_pie">Select a month:</label>
+                        <input type="month" id="monthInput_pie" name="monthInput_pie" value="2024-04" />
+                    </div>
+                    <div class="cediv" id="cediv4">
+                        <div id="between_date_pie">
+                            <label for="startDate_ce">From Date:</label>
+                            <input type="date" id="startDate_ce" name="startDate">
+                            <label for="endDate_ce" style="margin-right: 22px;">  To Date:    </label>
+                            <input type="date" id="endDate_ce" name="endDate">
+                        </div>
+                    </div>
+                </div>  
+            </div> 
+            <div id="s1">
+                <img src="gif.gif" />
+            </div>         
+        </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script type="module" src="analyse1.js"></script>
+        <script type="module" src="analyse2.js"></script>
+        <script  src="analyse.js"></script>
+
+</body>
+</html>
+

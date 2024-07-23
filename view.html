@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker and Analyser</title>
+    <link rel="stylesheet" type="text/css" href="view.css">
+</head>
+<body id="b">
+    <div id="snackbar"></div>
+    <div id="div1">
+        <h1>View Receipts</h1>
+        <div>
+            <label>
+                <input type="radio" name="radio" id="range" checked > Range
+            </label>
+            <label>
+                <input type="radio" name="radio" id="custom"> Custom
+            </label>
+            <label>
+                <input type="radio" name="radio" id="between"> Between
+            </label>
+        </div>
+
+        <div id="div_range">
+            <label for="dateRange">Select a Range:</label>
+            <select id="dateRange" name="dateRange">
+                <option value="all">All</option>
+                <option value="today">Today</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="lastWeek">Last Week</option>
+                <option value="lastMonth">Last Month</option>
+                <option value="lastYear">Last Year</option>
+            </select>
+        </div>
+
+        <div id="div_custom">
+            <label for="dateCustom">Sort by :</label>
+            <select id="dateCustom" name="dateCustom">
+                <option value="all">All</option>
+                <option value="date">Date</option>
+                <option value="month">Month</option>
+                <option value="year">Year</option>
+            </select>
+            <div id="custom_date">
+                <label for="customDate">Date:</label>
+                <input type="date" id="customDate" name="customDate" value="2023-01-01">
+            </div>
+            <div id="custom_month">
+                <label for="customMonth">Month:</label>
+                <input type="month" id="customMonth" name="customMonth" value="2023-01">
+            </div>
+            <div id="custom_year">
+                <label for="customYear">Year:</label>
+                <input type="number" id="customYear" name="customYear" value="2023" min="1900" max="2099" step="1">
+            </div>
+        </div>
+        
+        <div id="div_between">
+            <label for="dateBetween" style="margin-right: 22px;">Between :</label>
+            <select id="dateBetween" name="dateBetween">
+                <option value="all">All</option>
+                <option value="date">Date</option>
+                <option value="month">Month</option>
+                <option value="year">Year</option>
+            </select>
+            <div id="between_date">
+                <label for="startDate">From Date:</label>
+                <input type="date" id="startDate" name="startDate" value="2023-01-01"><br>
+                <label for="endDate" style="margin-right: 22px;">To Date:    </label>
+                <input type="date" id="endDate" name="endDate" value="2024-01-01">
+            </div>
+            <div id="between_month">
+                <label for="startMonth">From Month:</label>
+                <input type="month" id="startMonth" name="startMonth" value="2023-01"><br>
+                <label for="endMonth" style="margin-right: 22px;">To Month:    </label>
+                <input type="month" id="endMonth" name="endMonth" value="2024-01">
+            </div>
+            <div id="between_year">
+                <label for="startYear">From Year:</label>
+                <input type="number" id="startYear" name="startYear" value="2023" min="1900" max="2099" step="1"><br>
+                <label for="endYear" style="margin-right: 22px;">To Year:</label>
+                <input type="number" id="endYear" name="endYear" value="2024" min="1900" max="2099" step="1">
+            </div>
+        </div>
+        <div class ='div2'>
+            <div id="imageContainer"></div>
+            <div id="paginationButtons">
+                <button id="previousButton">Previous</button>
+                <button id="nextButton">Next</button>
+           
+            </div>
+        </div>
+        <a class="a" href="index.html" >
+            <button >
+                <b>Back</b>
+            </button>
+        </a>
+    </div>
+
+    <div id="s1">
+        <img src="gif.gif" />
+    </div>
+    <script type="module" src="view.js"></script>
+</body>
+</html>

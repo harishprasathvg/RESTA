@@ -1,0 +1,202 @@
+body {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    margin: 10px;
+    box-sizing: border-box;
+
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/close-up-of-grocery-receipt-royalty-free-image-147205787-1541672141.jpg?resize=2048:*");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+
+    font-family: Arial, sans-serif;
+
+}
+
+#snackbar {
+    display: none;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.div2 {
+    padding: 10px;
+    min-width: 50%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: grid;
+    place-items: center;
+}
+
+#imageContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    gap: 20px; /* Gap between images */
+    justify-items: center; /* Center items horizontally */
+}
+
+.image {
+    max-width: 100%; /* Ensure images don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 20px;
+}
+#div1{
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/close-up-of-grocery-receipt-royalty-free-image-147205787-1541672141.jpg?resize=2048:*");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 10px;
+    box-sizing: border-box;
+    min-width: 100%;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: bisque;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 15px;
+}
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.deletebtn{
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#s1 {
+    align-items: center; 
+    align-content: center; 
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#uploadStatus {
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+
+#jsdiv{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+
+#custominput,#div_custom,#div_between
+{
+    display: none;
+}
+
+
+#custom_date,#custom_month,#custom_year{
+    display:none;
+}
+
+#between_date,#between_month,#between_year{
+    display:none;
+}
+
+input{
+    margin-bottom: 20px;
+}
+
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+select {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #333;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4059/4059964.png'); 
+    background-size: 22px; 
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+option {
+    background-color: white;
+    color: black; 
+}
+
+
+input[type="date"] {
+    width: 210px; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+input[type="month"] {
+    width: 200px; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+input[type="number"] {
+    width: 210px; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-left: 30px;
+  }
+
+  h5{
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
